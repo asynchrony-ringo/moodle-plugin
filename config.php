@@ -6,10 +6,10 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = 'db';
-$CFG->dbname    = 'moodle';
-$CFG->dbuser    = 'moodle';
-$CFG->dbpass    = 'moodle';
+$CFG->dbhost    = $_ENV['POSTGRES_HOST'];
+$CFG->dbname    = $_ENV['POSTGRES_NAME'];
+$CFG->dbuser    = $_ENV['POSTGRES_USERNAME'];
+$CFG->dbpass    = $_ENV['POSTGRES_PASSWORD'];
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
@@ -18,7 +18,7 @@ $CFG->dboptions = array (
 );
 
 $CFG->wwwroot   = 'http://localhost:3002';
-$CFG->dataroot  = '/var/moodledata';
+$CFG->dataroot  = $_ENV['DATA_FOLDER'];
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
