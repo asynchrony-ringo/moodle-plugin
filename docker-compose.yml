@@ -1,0 +1,29 @@
+version: '2'
+services:
+  instance:
+    image: asynchronyringo/moodle:latest
+    command: /usr/bin/internal_start.sh
+    ports:
+      - 3002:80
+      - 3003:443
+    volumes:
+      - ./internal_start.sh:/usr/bin/internal_start.sh
+      - ./moodle_data:/var/moodledata
+      - ./config.php:/var/www/html/config.php
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=moodle
+      - POSTGRES_PASSWORD=moodle
+      - POSTGRES_DB=moodle
+      - MOODLE_URL=http://192.168.59.103
+      - DATA_FOLDER='/var/moodledata'
+    depends_on:
+      - db
+  db:
+    image: postgres:9.3
+    volumes:
+      - ./db_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=moodle
+      - POSTGRES_PASSWORD=moodle
+      - POSTGRES_DB=moodle
