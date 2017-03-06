@@ -6,10 +6,10 @@ $CFG = new stdClass();
 
 $CFG->dbtype    = 'pgsql';
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = $_ENV['POSTGRES_HOST'];
-$CFG->dbname    = $_ENV['POSTGRES_NAME'];
-$CFG->dbuser    = $_ENV['POSTGRES_USERNAME'];
-$CFG->dbpass    = $_ENV['POSTGRES_PASSWORD'];
+$CFG->dbhost    = getenv('POSTGRES_HOST');
+$CFG->dbname    = getenv('POSTGRES_DB');
+$CFG->dbuser    = getenv('POSTGRES_USERNAME');
+$CFG->dbpass    = getenv('POSTGRES_PASSWORD');
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
@@ -18,7 +18,7 @@ $CFG->dboptions = array (
 );
 
 $CFG->wwwroot   = 'http://localhost:3002';
-$CFG->dataroot  = $_ENV['DATA_FOLDER'];
+$CFG->dataroot  = getenv('DATA_FOLDER');
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
