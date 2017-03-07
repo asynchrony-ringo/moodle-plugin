@@ -3,8 +3,6 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get -y install software-properties-common
 RUN add-apt-repository ppa:ondrej/php
 
-##RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
-
 RUN apt-get update && \
 		apt-get -y --allow-unauthenticated install mysql-client pwgen python-setuptools curl git unzip apache2 php7.1 \
 		php7.1-gd libapache2-mod-php7.1 wget supervisor php7.1-pgsql curl libcurl3 \
@@ -15,7 +13,6 @@ RUN cd /tmp && \
 	mv /tmp/moodle/* /var/www/html/ && \
 	rm /var/www/html/index.html && \
 	chown -R www-data:www-data /var/www/html
-# Note: postfix may be replaced by our own mail server similar to canvas
 
 # Note: May remove this requirement as Nginx may be acting as our proxy
 # Enable SSL, moodle requires it
