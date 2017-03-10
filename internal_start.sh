@@ -1,8 +1,5 @@
 #!/bin/bash
-
 chmod 770 var/moodledata
-chown www-data:www-data /var/www/html/config.php
-# chown -R www-data:www-data /var/www/html/mod/spark_module
 
 /etc/init.d/cron start
 
