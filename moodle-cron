@@ -1,1 +1,1 @@
-* * * * * root bash -c ". /root/project_env.sh; echo "cronning" >> /var/log/cron.log 2>&1; /usr/bin/php /var/www/html/admin/cli/cron.php >> /var/log/cron.log 2>&1"
+* * * * * root . /root/project_env.sh; echo "cronning" >> /var/log/cron.log 2>&1; /usr/bin/php /var/www/html/admin/cli/cron.php >> /var/log/cron.log 2>&1
