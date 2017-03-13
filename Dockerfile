@@ -19,5 +19,3 @@ RUN cd /tmp && \
 RUN a2enmod ssl && a2ensite default-ssl
 
 COPY moodle-cron /etc/cron.d/moodle-cron
-
-RUN cron
