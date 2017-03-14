@@ -26,8 +26,6 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($hassiteconfig) {
     $settings = new admin_settingpage('local_spark', 'Spark Integration Installation');
-    // $settings->add(new admin_setting_configcheckbox('local_spark/enabled', get_string('activate', 'local_spark'),
-    //     get_string('stractivate', 'local_spark'), 0));
 
-     $ADMIN->add('localplugins', $settings);
+    $ADMIN->add('localplugins', $settings);
 }
