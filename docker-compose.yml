@@ -10,6 +10,7 @@ services:
       - ./internal_start.sh:/usr/bin/internal_start.sh
       - ./moodle_data:/var/moodledata
       - ./config.php:/var/www/html/config.php
+      # - ./spark_local:/var/www/html/local/spark
     env_file:
       - db.env
     depends_on:
